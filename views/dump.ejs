@@ -1,0 +1,94 @@
+<div class="container" style="background-color: bisque;">
+    <div class="row">
+        <div class="weather">
+
+            <% let result = results[0]; %>
+            <h1 class="card-title" style="font-size: 20px;"><%= result.query %></h1>
+            <h1 style="font-size:20px"><span><%= result.temp %> &#8451;</span> </h1>
+            <img style="width: 50px;position: relative;bottom:10px; left:10px"src=<%= result.iconURL %> alt="">
+            
+        </div>
+    </div>
+
+
+<div class="container" style="background-color: bisque;">
+    <div class="row">
+        <div class="weather">
+
+            <% let result = results[0]; %>
+            <h1 class="card-title" style="font-size: 20px;"><%= result.query %></h1>
+            <h1 style="font-size:20px"><span><%= result.temp %> &#8451;</span> </h1>
+            <img style="width: 50px;position: relative;bottom:10px; left:10px"src=<%= result.iconURL %> alt="">
+            
+        </div>
+    </div>
+
+app.post("/register",function(req,res)
+{ 
+  const query = "Vellore";
+  const url="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid=7248c11d0843c2257f178d2cf025e986&unit=metric";
+  https.get(url,(response) =>{
+  let data="";
+  response.on("data",(chunk)=>
+  {
+    data+=chunk;
+    if(response.statusCode===404 || response.statusCode===400)
+    {
+        res.redirect("/page1");
+    
+    }
+    else{
+        const weatherData=JSON.parse(data);
+        console.log(weatherData);
+        const temp=weatherData.main.temp;
+        const description=weatherData.weather[0].description;
+        const icon=weatherData.weather[0].icon;
+        const iconURL="http://openweathermap.org/img/wn/"+ icon +"@2x.png";
+        const result={
+            query:query,
+            temp:temp,
+            description:description,
+            iconURL:iconURL,
+        }
+        tempinfo.unshift(result);
+        res.redirect("/register")
+    }
+});
+  });
+});
+
+
+
+app.post("/login",function(req,res)
+{
+  const query = "Vellore";
+  const url="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid=7248c11d0843c2257f178d2cf025e986&unit=metric";
+  https.get(url,(response) =>{
+  let data="";
+  response.on("data",(chunk)=>
+  {
+    data+=chunk;
+    if(response.statusCode===404 || response.statusCode===400)
+    {
+        res.redirect("/page1");
+    
+    }
+    else{
+        const weatherData=JSON.parse(data);
+        console.log(weatherData);
+        const temp=weatherData.main.temp;
+        const description=weatherData.weather[0].description;
+        const icon=weatherData.weather[0].icon;
+        const iconURL="http://openweathermap.org/img/wn/"+ icon +"@2x.png";
+        const result={
+            query:query,
+            temp:temp,
+            description:description,
+            iconURL:iconURL,
+        }
+        tempinfo.unshift(result);
+        res.redirect("/login")
+    }
+});
+  });
+});

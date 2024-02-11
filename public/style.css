@@ -1,0 +1,99 @@
+
+
+.form{
+    text-align: center;
+    margin-top:150px;
+    border-radius: 20%;
+    font-weight: bold;
+}
+
+.weather{
+    position:relative;
+    left:30px;
+
+}
+
+.buttons{
+    position: relative;
+    left:900px;
+  
+
+}
+.one{
+    border:2px black;
+    border-style: solid;
+
+}
+.two{
+    position: relative;
+    left: 910px;
+    border:2px black;
+    border-style: solid;
+}
+.three{
+    position: relative;
+    left:920px;
+    border:2px black;
+    border-style: solid;
+}
+
+.text-typing{
+    position: relative;
+    left:400px;
+    top:100px;
+}
+
+.reg{
+    position: relative;
+    left:100px;
+   
+}
+
+.section3{
+    
+    position:relative;
+    top:500px;
+    left: 500px;
+
+}
+
+#user{
+    height:100px;
+    width: 100px;
+    background-color: aqua;
+    border-style: solid;
+    border:2px black;
+    position: relative;
+    left:100px;
+    display: none;
+}
+
+.add-products form{
+    background-color:rgb(241, 241, 241);
+    border-radius: .5rem;
+    padding:1rem;
+    text-align:center;
+    box-shadow:10rem ;
+    border: 7rem;
+    border-color: black;
+    max-width: 30rem;
+    margin:0 auto;
+
+}
+.add-products form h3{
+    font-size:2.5rem;
+    text-transform:uppercase;
+    color:black;
+    margin-bottom:2.5rem;
+}
+
+.add-products form .box{
+    width:80%;
+    background-color:antiquewhite;
+    border-radius: .5rem;
+    margin:.5rem 0;
+    padding:1.2rem 1.4rem;
+    color:black;
+    font-size:1rem;
+    border-radius:.5rem;
+}
